@@ -6,7 +6,7 @@ pipeline {
          sh 'mvn clean package'
         }
      }
-     def repository
+     
      stage('Docker'){
        steps{  
             def registryIp = "registry.progressoft.com"
