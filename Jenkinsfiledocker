@@ -3,7 +3,7 @@ pipeline {
    parameters {
          string(name: 'registryip', defaultValue: 'registry.progressoft.com', description: 'Staging Server')
          string(name: 'username', defaultValue: 'admin', description: 'username')
-         string(name: 'password', defaultValue: 'admi123', description: 'password')
+         string(name: 'password', defaultValue: 'admin123', description: 'password')
    }
    stages{
      stage('build'){
