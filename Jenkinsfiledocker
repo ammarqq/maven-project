@@ -17,7 +17,8 @@ pipeline {
             // repository = "${registryIp}/tomcatwebapp:${env.BUILD_ID}"
             sh "docker login -u ${username} -p ${password} ${registryip}"
             sh "docker build . -t tomcatwebapp:${env.BUILD_ID}"
-            sh "docker push ${registryIp}/tomcatwebapp:latest"
+            sh "docker tag  tomcatwebapp:${env.BUILD_ID}" ${registryIp}/tomcatwebapp:${env.BUILD_ID}"
+            sh "docker push ${registryIp}/tomcatwebapp:${env.BUILD_ID}"
             sh "docker rmi tomcatwebapp:${env.BUILD_ID}"
          
          
