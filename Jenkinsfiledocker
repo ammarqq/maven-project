@@ -4,12 +4,11 @@ pipeline {
      stage('build'){
        steps{
          sh 'mvn clean package'
-       }
-     stage ('Docker') {
+        }
+     stage('Docker') {
        steps{  
             def registryIp = "registry.progressoft.com"
             repository = "${registryIp}/tomcatwebapp:${env.BUILD_ID}"
-
             sh "docker login -u developer -p developer ${registryIp}"
             sh "docker build . -t tomcatwebapp:${env.BUILD_ID}"
             sh "docker push tomcatwebapp:${env.BUILD_ID}"
@@ -19,6 +18,8 @@ pipeline {
         }
 
       }
-    }
+     }
+  
   }
+
 }
