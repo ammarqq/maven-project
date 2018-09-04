@@ -2,6 +2,8 @@ pipeline {
    agent any
    parameters {
          string(name: 'registryip', defaultValue: 'registry.progressoft.com', description: 'Staging Server')
+         string(name: 'username', defaultValue: 'admin', description: 'username')
+         string(name: 'password', defaultValue: 'admi123', description: 'password')
    }
    stages{
      stage('build'){
@@ -13,7 +15,7 @@ pipeline {
      stage('Docker'){
        steps{  
             // repository = "${registryIp}/tomcatwebapp:${env.BUILD_ID}"
-            sh "docker login -u admin -p admin123 ${registryip}"
+            sh "docker login -u ${username} -p ${password} ${registryip}"
             sh "docker build . -t tomcatwebapp:${env.BUILD_ID}"
             sh "docker push tomcatwebapp:${env.BUILD_ID}"
             sh "docker login -u developer -p developer ${registryip}"
