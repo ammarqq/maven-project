@@ -13,10 +13,10 @@ pipeline {
      stage('Docker'){
        steps{  
             // repository = "${registryIp}/tomcatwebapp:${env.BUILD_ID}"
-            sh "docker login -u developer -p developer ${registryIp}"
+            sh "docker login -u developer -p developer ${registryip}"
             sh "docker build . -t tomcatwebapp:${env.BUILD_ID}"
             sh "docker push tomcatwebapp:${env.BUILD_ID}"
-            sh "docker login -u developer -p developer registry.progressoft.com"
+            sh "docker login -u developer -p developer ${registryip}"
          
          
         }
