@@ -6,7 +6,7 @@ pipeline {
          string(name: 'password', defaultValue: '', description: 'password')
    
    
-  //  }
+   }
   //  triggers {
   //        pollSCM('* * * * *')
   //    }
