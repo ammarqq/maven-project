@@ -38,6 +38,7 @@ pipeline {
       //     sh "kubectl apply -f app.yml"
       //   }
       // }
+      //
      }
   
   
