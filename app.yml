@@ -6,7 +6,7 @@ apiVersion: v1
 kind: Namespace
 metadata:
   name: tomcat
----
+# ---
 # ##
 # # issuer prod
 # apiVersion: certmanager.k8s.io/v1alpha1
@@ -120,7 +120,7 @@ spec:
     spec:
       containers:
       - name: tomcat-container
-        image: tomcat:8
+        image: ammarqqqq/tomcatwebapp:9
         ports:
         - containerPort: 8080
       restartPolicy: Always
