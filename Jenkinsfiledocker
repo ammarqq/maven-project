@@ -32,12 +32,12 @@ pipeline {
         }
 
       }
-      stage('kubernetes'){
-        steps{
-          // sh "kubectl delete -f app.yml"
-          sh "kubectl apply -f app.yml"
-        }
-      }
+      // stage('kubernetes'){
+      //   steps{
+      //     // sh "kubectl delete -f app.yml"
+      //     sh "kubectl apply -f app.yml"
+      //   }
+      // }
      }
   
   
