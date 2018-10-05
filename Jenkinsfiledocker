@@ -31,6 +31,11 @@ pipeline {
         }
 
       }
+      stage('kubernetes'){
+        steps{
+          sh "kubectl create -f app.yml"
+        }
+      }
      }
   
   
