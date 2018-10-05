@@ -1,11 +1,11 @@
 ###########################################################################
 # NameSpace
-###########################################################################
----
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: tomcat
+# ###########################################################################
+# ---
+# apiVersion: v1
+# kind: Namespace
+# metadata:
+#   name: tomcat
 # ---
 # ##
 # # issuer prod
@@ -58,11 +58,11 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: tomcat
-  namespace: tomcat
+  # namespace: tomcat
   annotations:
     kubernetes.io/ingress.class: nginx
     name: tomcat
-    namespace: tomcat
+    # namespace: tomcat
     # letsencrypt support enabled (https://github.com/jetstack/kube-lego)
     #kubernetes.io/tls-acme: "true"
     # use the Kubernetes ingress "nginx"
@@ -87,7 +87,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  namespace: tomcat
+  # namespace: tomcat
   name: tomcat-svc
   labels:
     service: tomcat-svc-label
@@ -104,7 +104,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  namespace: tomcat
+  # namespace: tomcat
   name: tomcat8-deployment
   labels:
     app: tomcat8
