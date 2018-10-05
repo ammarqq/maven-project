@@ -34,7 +34,7 @@ pipeline {
       }
       stage('kubernetes'){
         steps{
-          sh "kubectl delete -f app.yml"
+          // sh "kubectl delete -f app.yml"
           sh "kubectl create -f app.yml"
         }
       }
