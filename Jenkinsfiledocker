@@ -24,9 +24,9 @@ pipeline {
             sh "docker login -u ${username} -p ${password}"
             sh "docker build . -t tomcatwebapp:${env.BUILD_ID}"
             sh "docker tag  tomcatwebapp:${env.BUILD_ID} ${registryip}/tomcatwebapp:${env.BUILD_ID}"
-            sh "docker push ${registryIp}/tomcatwebapp:${env.BUILD_ID}"
+            sh "docker push ${registryip}/tomcatwebapp:${env.BUILD_ID}"
             sh "docker rmi tomcatwebapp:${env.BUILD_ID}"
-            sh "docker rmi ${registryIp}/tomcatwebapp:${env.BUILD_ID}"
+            sh "docker rmi ${registryip}/tomcatwebapp:${env.BUILD_ID}"
          
          
         }
