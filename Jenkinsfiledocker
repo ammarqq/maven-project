@@ -4,6 +4,10 @@ pipeline {
         string(name: 'registryip', defaultValue: 'ammarqqqq', description: 'Staging Server')
          string(name: 'username', defaultValue: 'ammarqqqq', description: 'username')
          string(name: 'password', defaultValue: '', description: 'password')
+   
+   triggers {
+         pollSCM('* * * * *')
+     }
    }
    stages{
      stage('build'){
