@@ -6,10 +6,10 @@ pipeline {
          string(name: 'password', defaultValue: '', description: 'password')
    
    
-   }
-   triggers {
-         pollSCM('* * * * *')
-     }
+  //  }
+  //  triggers {
+  //        pollSCM('* * * * *')
+  //    }
    stages{
      stage('build'){
        steps{
@@ -34,6 +34,7 @@ pipeline {
       }
       stage('kubernetes'){
         steps{
+          sh "kubectl delete -f app.yml"
           sh "kubectl create -f app.yml"
         }
       }
