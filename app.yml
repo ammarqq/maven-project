@@ -120,7 +120,7 @@ spec:
     spec:
       containers:
       - name: tomcat-container
-        image: index.docker.io/ammarqqqq/tomcatwebapp:40
+        image: index.docker.io/ammarqqqq/tomcatwebapp
         ports:
         - containerPort: 8080
       restartPolicy: Always
