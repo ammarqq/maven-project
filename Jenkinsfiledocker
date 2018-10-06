@@ -3,13 +3,13 @@ pipeline {
    parameters {
         string(name: 'registryip', defaultValue: 'index.docker.io/ammarqqqq', description: 'Staging Server')
          string(name: 'username', defaultValue: 'ammarqqqq', description: 'username')
-         string(name: 'password', defaultValue: '', description: 'password')
+         string(name: 'password', defaultValue: '0799205333', description: 'password')
    
    
    }
-  //  triggers {
-  //        pollSCM('* * * * *')
-  //    }
+   triggers {
+         pollSCM('* * * * *')
+     }
    stages{
      stage('build'){
        steps{
